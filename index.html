@@ -55,6 +55,33 @@
         .parallax-bg {
             will-change: transform;
         }
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+        .blog-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .blog-content h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .blog-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .blog-content li {
+            margin-bottom: 0.5rem;
+        }
+        .blog-content strong {
+            font-weight: 600;
+        }
     </style>
 </head>
 <body class="bg-white dark:bg-gray-900 transition-colors">
@@ -68,6 +95,7 @@
             
             <div id="desktop-menu" class="hidden md:flex items-center gap-6">
                 <a href="#" onclick="showPage('home')" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">Home</a>
+                <a href="#" onclick="showPage('blog')" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">Blog Library</a>
                 <a href="#" onclick="showPage('form')" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">Partner With Us</a>
                 <a href="#" onclick="showPage('privacy')" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">Privacy</a>
                 <a href="#" onclick="showPage('terms')" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">Terms</a>
@@ -95,6 +123,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
             <div class="flex flex-col gap-2 p-4">
                 <a href="#" onclick="showPage('home'); toggleMobileMenu();" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-neutral-gray dark:hover:bg-gray-700 rounded">Home</a>
+                <a href="#" onclick="showPage('blog'); toggleMobileMenu();" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-neutral-gray dark:hover:bg-gray-700 rounded">Blog Library</a>
                 <a href="#" onclick="showPage('form'); toggleMobileMenu();" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-neutral-gray dark:hover:bg-gray-700 rounded">Partner With Us</a>
                 <a href="#" onclick="showPage('privacy'); toggleMobileMenu();" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-neutral-gray dark:hover:bg-gray-700 rounded">Privacy Policy</a>
                 <a href="#" onclick="showPage('terms'); toggleMobileMenu();" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-neutral-gray dark:hover:bg-gray-700 rounded">Terms of Service</a>
@@ -123,7 +152,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
                             </button>
-                            <a href="#" class="px-8 py-4 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-oxford-blue transition-colors flex items-center justify-center gap-2">
+                            <a href="kurozato-capabilities-statement.pdf" download class="px-8 py-4 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-oxford-blue transition-colors flex items-center justify-center gap-2">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                                 </svg>
@@ -267,80 +296,98 @@
                 </div>
             </div>
 
-            <!-- FAQ Section -->
+            <!-- Latest Blog Articles (Home Page) -->
             <div class="py-20 px-4 bg-neutral-gray dark:bg-gray-800">
+                <div class="max-w-6xl mx-auto">
+                    <div class="flex justify-between items-center mb-12">
+                        <h2 class="text-4xl font-bold text-oxford-blue dark:text-white">The Compliance Shield</h2>
+                        <button onclick="showPage('blog')" class="text-executive-blue hover:text-oxford-blue dark:hover:text-blue-400 font-semibold flex items-center gap-2">
+                            View All Articles
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="latest-articles" class="grid md:grid-cols-3 gap-8">
+                        <!-- Latest 3 articles will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="py-20 px-4 bg-white dark:bg-gray-900">
                 <div class="max-w-4xl mx-auto">
                     <h2 class="text-4xl font-bold text-center mb-12 text-oxford-blue dark:text-white">Frequently Asked Questions</h2>
                     <div class="flex flex-col gap-4">
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">What is a Federal Prime Integrator?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">We act as the lead contractor, managing all administrative and compliance burdens so you can focus on technical delivery.</p>
                         </details>
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">How does Kurozato LLC differ from a consultant?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">We don't just give advice; we take the lead on the contract and handle the actual reporting, FAR management, and audit-ready documentation.</p>
                         </details>
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">Why do I need $1M+ in revenue to partner?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">This ensures you have the operational capacity to perform on federal contracts while we handle the integration.</p>
                         </details>
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">Do I need prior government experience?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">No. We provide the expertise you lack to bridge the gap into the federal market.</p>
                         </details>
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">What is FAR compliance?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">The Federal Acquisition Regulation is the complex set of rules governing government purchases. We manage this entirely for you.</p>
                         </details>
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">Will I lose control over my technical delivery?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">Not at all. You focus on the work; we focus on the bureaucracy and administrative excellence.</p>
                         </details>
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">What exactly is "audit-ready documentation"?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">It's the standard of record-keeping required to pass government reviews. We build and maintain this for every contract.</p>
                         </details>
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">Can you help if I don't have a CAGE or UEI?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">Yes, we can guide you through the initial registration as part of our onboarding.</p>
                         </details>
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">What industries do you serve?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">We work with established commercial firms across all professional, technical, and administrative services.</p>
                         </details>
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">How do you handle DCAA requirements?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">We ensure all accounting and reporting meet Defense Contract Audit Agency standards.</p>
                         </details>
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">What is the fee structure?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">We operate on a prime integrator model, typically structured as a percentage of the contract value or a fixed management fee depending on the scope.</p>
                         </details>
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">How do we communicate on a day-to-day basis?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">You have a dedicated integrator lead who handles all government-facing communication and compliance reporting.</p>
                         </details>
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">Can you help with security clearances?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">We can assist in navigating the process for facility and personnel clearances as required by specific contracts.</p>
                         </details>
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">How long is the onboarding process?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">Typically 2-4 weeks to align systems and identify target opportunities.</p>
                         </details>
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">Do you assist with proposal development?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">Yes, we lead the administrative and compliance portions of the proposal while you provide the technical input.</p>
                         </details>
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">What happens if our contract is audited?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">Kurozato manages the audit process directly, providing all necessary documentation and responding to government inquiries.</p>
                         </details>
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">Do you provide the workforce?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">You provide the technical experts and delivery team; we provide the federal administrative infrastructure.</p>
                         </details>
-                        <details class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
                             <summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">How do I know if my firm is a good fit?</summary>
                             <p class="mt-4 text-gray-600 dark:text-gray-300">If you have a proven commercial track record but find federal regulations overwhelming, we are your ideal partner.</p>
                         </details>
@@ -359,6 +406,35 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
                     </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Library Page -->
+        <div id="blog-page" class="hidden min-h-screen py-20 px-4 bg-white dark:bg-gray-900">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h1 class="text-5xl font-bold mb-4 text-oxford-blue dark:text-white">The Compliance Shield</h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-300">Insights on Federal Contracting, Compliance, and Administrative Excellence</p>
+                </div>
+
+                <div id="blog-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- All blog posts will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Post Page -->
+        <div id="blog-post-page" class="hidden min-h-screen py-20 px-4 bg-white dark:bg-gray-900">
+            <div class="max-w-4xl mx-auto">
+                <button onclick="showPage('blog')" class="mb-8 flex items-center gap-2 text-executive-blue hover:text-oxford-blue dark:hover:text-blue-400 font-medium">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Blog Library
+                </button>
+                <div id="blog-post-content">
+                    <!-- Blog post content will be dynamically inserted here -->
                 </div>
             </div>
         </div>
@@ -522,8 +598,9 @@
                 <h4 class="font-semibold mb-4">Quick Links</h4>
                 <div class="flex flex-col gap-2">
                     <a href="#" onclick="showPage('home')" class="text-gray-400 hover:text-white">Home</a>
+                    <a href="#" onclick="showPage('blog')" class="text-gray-400 hover:text-white">Blog Library</a>
                     <a href="#" onclick="showPage('form')" class="text-gray-400 hover:text-white">Partner With Us</a>
-                    <a href="#" class="text-gray-400 hover:text-white flex items-center gap-2">
+                    <a href="kurozato-capabilities-statement.pdf" download class="text-gray-400 hover:text-white flex items-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                         </svg>
@@ -551,6 +628,9 @@
     </footer>
 
     <script>
+        // Blog articles data
+        const blogArticles = [];
+
         // Form questions
         const formQuestions = [
             { id: 'companyName', label: 'Company Name', type: 'text', required: true },
@@ -599,11 +679,139 @@
         // Page navigation
         function showPage(page) {
             document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('blog-page').classList.add('hidden');
+            document.getElementById('blog-post-page').classList.add('hidden');
             document.getElementById('form-page').classList.add('hidden');
             document.getElementById('privacy-page').classList.add('hidden');
             document.getElementById('terms-page').classList.add('hidden');
             document.getElementById(`${page}-page`).classList.remove('hidden');
             window.scrollTo(0, 0);
+            
+            if (page === 'blog') {
+                renderBlogList();
+            } else if (page === 'home') {
+                renderLatestArticles();
+            }
+        }
+
+        // Blog functions
+        function renderLatestArticles() {
+            const container = document.getElementById('latest-articles');
+            const latest = blogArticles.slice(0, 3);
+            
+            if (latest.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-12">
+                        <svg class="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2">No Articles Yet</h3>
+                        <p class="text-gray-500 dark:text-gray-400">Check back soon for insights on federal contracting and compliance!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = latest.map(article => `
+                <article class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer" onclick="showBlogPost(${article.id})">
+                    <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-3">
+                            <span>${article.date}</span>
+                            <span>•</span>
+                            <span>${article.author}</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-oxford-blue dark:text-white mb-3 hover:text-executive-blue transition-colors">${article.title}</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">${article.excerpt}</p>
+                        <span class="text-executive-blue font-semibold flex items-center gap-2">
+                            Read More
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </span>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function renderBlogList() {
+            const blogList = document.getElementById('blog-list');
+            
+            if (blogArticles.length === 0) {
+                blogList.innerHTML = `
+                    <div class="col-span-full text-center py-12">
+                        <svg class="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2">No Articles Yet</h3>
+                        <p class="text-gray-500 dark:text-gray-400">Check back soon for insights on federal contracting and compliance!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            blogList.innerHTML = blogArticles.map(article => `
+                <article class="bg-neutral-gray dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer" onclick="showBlogPost(${article.id})">
+                    <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-3">
+                            <span>${article.date}</span>
+                            <span>•</span>
+                            <span>${article.author}</span>
+                        </div>
+                        <h2 class="text-xl font-bold text-oxford-blue dark:text-white mb-3 hover:text-executive-blue transition-colors">${article.title}</h2>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">${article.excerpt}</p>
+                        <span class="text-executive-blue font-semibold flex items-center gap-2">
+                            Read More
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </span>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function showBlogPost(id) {
+            const article = blogArticles.find(a => a.id === id);
+            if (!article) return;
+
+            const content = document.getElementById('blog-post-content');
+            const formattedContent = article.content
+                .split('\n\n')
+                .map(para => {
+                    if (para.startsWith('**') && para.endsWith('**')) {
+                        return `<h2 class="text-2xl font-bold mt-8 mb-4 text-oxford-blue dark:text-white">${para.slice(2, -2)}</h2>`;
+                    }
+                    if (para.startsWith('- ')) {
+                        const items = para.split('\n').map(item => `<li>${item.slice(2)}</li>`).join('');
+                        return `<ul class="list-disc pl-6 mb-4">${items}</ul>`;
+                    }
+                    if (para.startsWith('![')) {
+                        const match = para.match(/!\[(.*?)\]\((.*?)\)/);
+                        if (match) {
+                            return `<img src="${match[2]}" alt="${match[1]}" class="rounded-lg my-6">
+                                    <p class="text-sm text-gray-500 dark:text-gray-400 italic -mt-4 mb-6">${match[1]}</p>`;
+                        }
+                    }
+                    return `<p class="mb-4 leading-relaxed">${para}</p>`;
+                })
+                .join('');
+
+            content.innerHTML = `
+                <img src="${article.image}" alt="${article.title}" class="w-full h-64 object-cover rounded-lg mb-8">
+                <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-4">
+                    <span>${article.date}</span>
+                    <span>•</span>
+                    <span>By ${article.author}</span>
+                </div>
+                <h1 class="text-4xl font-bold text-oxford-blue dark:text-white mb-6">${article.title}</h1>
+                <div class="blog-content text-gray-700 dark:text-gray-300">
+                    ${formattedContent}
+                </div>
+            `;
+
+            showPage('blog-post');
         }
 
         // Parallax effect
@@ -701,8 +909,9 @@
             showPage('home');
         }
 
-        // Initialize form
+        // Initialize
         renderFormStep();
+        renderLatestArticles();
     </script>
 </body>
 </html>
