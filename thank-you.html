@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Kurozato LLC</title>
+    <meta name="description" content="Thank you for your interest in partnering with Kurozato LLC. We'll be in touch soon.">
+    <link rel="icon" type="image/png" href="logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'oxford-blue': '#14213d',
+                        'federal-red': '#DC143C',
+                        'executive-blue': '#005696',
+                        'neutral-gray': '#F2F2F2',
+                        'compliance-gold': '#DAA520'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes checkmark {
+            0% {
+                stroke-dashoffset: 100;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        .scale-in {
+            animation: scaleIn 0.5s ease-out;
+        }
+        .checkmark-path {
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: checkmark 0.5s ease-out 0.3s forwards;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 transition-colors">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-md z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="Kurozato LLC" class="h-10 w-auto">
+                <span class="text-xl font-bold text-oxford-blue dark:text-white">Kurozato LLC</span>
+            </div>
+            
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">Back to Home</a>
+                <button onclick="toggleDarkMode()" class="p-2 rounded-lg bg-neutral-gray dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+                    <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                    <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="min-h-screen pt-16 bg-gradient-to-br from-neutral-gray via-white to-neutral-gray dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+        <div class="max-w-4xl mx-auto px-4 py-20 flex items-center justify-center min-h-[calc(100vh-4rem)]">
+            <div class="w-full">
+                <!-- Success Icon -->
+                <div class="flex justify-center mb-8 scale-in">
+                    <div class="relative">
+                        <div class="w-32 h-32 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
+                            <svg class="w-20 h-20" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="#22c55e" stroke-width="4" class="dark:stroke-green-500"/>
+                                <path class="checkmark-path" d="M25 50 L45 70 L75 35" fill="none" stroke="#22c55e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <!-- Decorative ring -->
+                        <div class="absolute inset-0 w-32 h-32 border-4 border-executive-blue rounded-full opacity-20 animate-ping"></div>
+                    </div>
+                </div>
+
+                <!-- Main Message -->
+                <div class="text-center mb-12 fade-in">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 text-oxford-blue dark:text-white">
+                        Thank You!
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-4">
+                        Your submission has been received successfully.
+                    </p>
+                    <div class="max-w-2xl mx-auto">
+                        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                            An <span class="font-semibold text-executive-blue">Integrator Lead</span> will carefully review your capacity and organizational readiness. You can expect to hear from us within <span class="font-semibold text-compliance-gold">24 hours</span>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Info Cards -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12 fade-in">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue">
+                        <div class="flex items-center gap-3 mb-3">
+                            <svg class="w-6 h-6 text-executive-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <h3 class="font-bold text-oxford-blue dark:text-white">Quick Response</h3>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">We respond to all partnership inquiries within 24 business hours</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-compliance-gold">
+                        <div class="flex items-center gap-3 mb-3">
+                            <svg class="w-6 h-6 text-compliance-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                            <h3 class="font-bold text-oxford-blue dark:text-white">Thorough Review</h3>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Your information is carefully evaluated for partnership fit</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-federal-red">
+                        <div class="flex items-center gap-3 mb-3">
+                            <svg class="w-6 h-6 text-federal-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <h3 class="font-bold text-oxford-blue dark:text-white">Check Your Email</h3>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Watch for our response in your inbox and spam folder</p>
+                    </div>
+                </div>
+
+                <!-- Next Steps -->
+                <div class="bg-oxford-blue text-white p-8 rounded-lg shadow-xl mb-12 fade-in">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                        <svg class="w-7 h-7 text-compliance-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                        </svg>
+                        What Happens Next?
+                    </h2>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-executive-blue flex items-center justify-center flex-shrink-0 font-bold">1</div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Capacity Assessment</h4>
+                                <p class="text-blue-100 text-sm">Our team reviews your operational capacity, revenue profile, and federal contracting readiness</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-executive-blue flex items-center justify-center flex-shrink-0 font-bold">2</div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Initial Contact</h4>
+                                <p class="text-blue-100 text-sm">An Integrator Lead will reach out via email to schedule a brief discussion about your goals</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-executive-blue flex items-center justify-center flex-shrink-0 font-bold">3</div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Partnership Discussion</h4>
+                                <p class="text-blue-100 text-sm">We'll explore how Kurozato can manage FAR compliance and administrative burdens for your firm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+                    <a href="index.html" class="px-8 py-4 bg-executive-blue text-white rounded-lg font-semibold hover:bg-[#004577] transition-colors flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                        </svg>
+                        Return to Home
+                    </a>
+                    <a href="Capability Statement.pdf" download class="px-8 py-4 border-2 border-oxford-blue dark:border-white text-oxford-blue dark:text-white rounded-lg font-semibold hover:bg-oxford-blue hover:text-white dark:hover:bg-white dark:hover:text-oxford-blue transition-colors flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        Download Capabilities Statement
+                    </a>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="mt-12 text-center border-t border-gray-300 dark:border-gray-700 pt-8 fade-in">
+                    <p class="text-gray-600 dark:text-gray-400 mb-2">Need immediate assistance?</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm">
+                        <a href="mailto:kelley@kurozatollc.com" class="text-executive-blue hover:text-oxford-blue dark:hover:text-blue-400 font-medium flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            kelley@kurozatollc.com
+                        </a>
+                        <span class="hidden sm:block text-gray-400">|</span>
+                        <a href="tel:+12099250733" class="text-executive-blue hover:text-oxford-blue dark:hover:text-blue-400 font-medium flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            (209) 925-0733
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-oxford-blue text-white py-8 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <img src="logo.png" alt="Kurozato LLC" class="h-8 w-auto brightness-0 invert">
+                <span class="text-lg font-bold">Kurozato LLC</span>
+            </div>
+            <p class="text-gray-400 text-sm mb-2">P.O. Box 8264, Stockton, CA 95208</p>
+            <p class="text-gray-400 text-sm">Federal Prime Integrator | WOSB | HUBZone Certified</p>
+            <p class="text-gray-500 text-xs mt-4">&copy; 2026 Kurozato LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('darkMode', isDark);
+            document.getElementById('moon-icon').classList.toggle('hidden', isDark);
+            document.getElementById('sun-icon').classList.toggle('hidden', !isDark);
+        }
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.documentElement.classList.add('dark');
+            document.getElementById('moon-icon').classList.add('hidden');
+            document.getElementById('sun-icon').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
