@@ -171,6 +171,10 @@
             return `<strong class="font-bold text-oxford-blue dark:text-white">${text}</strong>`;
         };
 
+        renderer.hr = function() {
+            return `<hr class="my-8 border-t border-gray-300 dark:border-gray-700">`;
+        };
+
         marked.use({ renderer });
 
         // Fetch articles from JSON
@@ -310,7 +314,7 @@
             const urlParams = new URLSearchParams(window.location.search);
             const postId = urlParams.get('post');
             if (postId) {
-                const index = blogArticles.findIndex(a => a.id === parseInt(postId));
+                const index = blogArticles.findIndex(a => a.id === postId);
                 if (index !== -1) {
                     showBlogPost(index);
                 }
