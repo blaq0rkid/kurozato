@@ -1,0 +1,22 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Understanding FAR Compliance for New Contractors",
+      "date": "2026-04-10",
+      "author": "Kurozato Team",
+      "excerpt": "A comprehensive guide to Federal Acquisition Regulation compliance for companies entering the federal marketplace.",
+      "image": "/api/placeholder/800/400",
+      "content": "# Understanding FAR Compliance\n\nThe Federal Acquisition Regulation (FAR) can seem overwhelming for companies new to federal contracting. This guide will help you understand the basics.\n\n## What is FAR?\n\nThe FAR is the principal set of rules governing federal government procurement. It establishes uniform policies for acquisition of supplies and services.\n\n## Key FAR Requirements\n\n- Cost accounting standards\n- Labor standards and wage requirements\n- Intellectual property rights\n- Contract administration procedures\n- Dispute resolution processes\n\n## How Kurozato Helps\n\nAs your Federal Prime Integrator, we manage all FAR compliance requirements, allowing you to focus on technical delivery.\n\n## Getting Started\n\nThe first step is understanding your NAICS codes and ensuring proper SAM.gov registration. Contact us to learn more about our integration services."
+    },
+    {
+      "id": 2,
+      "title": "DCAA Audit Readiness: A Primer",
+      "date": "2026-04-08",
+      "author": "Kurozato Team",
+      "excerpt": "Learn what it takes to maintain audit-ready documentation and pass DCAA reviews with confidence.",
+      "image": "/api/placeholder/800/400",
+      "content": "# DCAA Audit Readiness\n\nThe Defense Contract Audit Agency (DCAA) sets strict standards for accounting systems used by government contractors.\n\n## Why DCAA Compliance Matters\n\nWithout proper DCAA-compliant accounting, you cannot:\n- Bill the government for your work\n- Receive payment on time\n- Maintain your contractor status\n\n## Key Requirements\n\n- Timekeeping systems with daily entries\n- Job cost accounting\n- Indirect cost pools\n- Approved accounting system\n\n## The Kurozato Advantage\n\nWe maintain audit-ready documentation from day one, ensuring you're always prepared for DCAA reviews."
+    }
+  ]
+}
