@@ -85,6 +85,22 @@
     </style>
 </head>
 <body class="bg-white dark:bg-gray-900 transition-colors">
+    <!-- Hidden Netlify Form for Detection -->
+    <form name="subcontractor-intake" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="companyName" />
+        <input type="text" name="contact" />
+        <input type="email" name="email" />
+        <input type="tel" name="phone" />
+        <select name="revenue"><option>Yes</option></select>
+        <input type="text" name="naicsCodes" />
+        <select name="samRegistered"><option>Yes</option></select>
+        <input type="text" name="uei" />
+        <select name="experience"><option>None</option></select>
+        <select name="hurdle"><option>FAR/DFARS</option></select>
+        <input type="text" name="capacity" />
+        <select name="timeline"><option>Immediately</option></select>
+    </form>
+
     <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-md z-50">
         <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -95,7 +111,7 @@
             
             <div id="desktop-menu" class="hidden md:flex items-center gap-6">
                 <a href="#" onclick="showPage('home')" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">Home</a>
-                <a href="#" onclick="showPage('blog')" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">Blog Library</a>
+                <a href="#" onclick="showPage('blog')" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">The Compliance Shield</a>
                 <a href="#" onclick="showPage('form')" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">Partner With Us</a>
                 <a href="#" onclick="showPage('privacy')" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">Privacy</a>
                 <a href="#" onclick="showPage('terms')" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">Terms</a>
@@ -123,7 +139,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
             <div class="flex flex-col gap-2 p-4">
                 <a href="#" onclick="showPage('home'); toggleMobileMenu();" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-neutral-gray dark:hover:bg-gray-700 rounded">Home</a>
-                <a href="#" onclick="showPage('blog'); toggleMobileMenu();" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-neutral-gray dark:hover:bg-gray-700 rounded">Blog Library</a>
+                <a href="#" onclick="showPage('blog'); toggleMobileMenu();" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-neutral-gray dark:hover:bg-gray-700 rounded">The Compliance Shield</a>
                 <a href="#" onclick="showPage('form'); toggleMobileMenu();" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-neutral-gray dark:hover:bg-gray-700 rounded">Partner With Us</a>
                 <a href="#" onclick="showPage('privacy'); toggleMobileMenu();" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-neutral-gray dark:hover:bg-gray-700 rounded">Privacy Policy</a>
                 <a href="#" onclick="showPage('terms'); toggleMobileMenu();" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-neutral-gray dark:hover:bg-gray-700 rounded">Terms of Service</a>
@@ -431,7 +447,7 @@
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
-                    Back to Blog Library
+                    Back to The Compliance Shield
                 </button>
                 <div id="blog-post-content">
                     <!-- Blog post content will be dynamically inserted here -->
@@ -458,7 +474,7 @@
                         </div>
                     </div>
 
-                    <form name="subcontractor-intake" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleFormSubmit(event)">
+                    <form name="subcontractor-intake" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                         <input type="hidden" name="form-name" value="subcontractor-intake">
                         <input type="hidden" name="bot-field">
                         
@@ -598,7 +614,7 @@
                 <h4 class="font-semibold mb-4">Quick Links</h4>
                 <div class="flex flex-col gap-2">
                     <a href="#" onclick="showPage('home')" class="text-gray-400 hover:text-white">Home</a>
-                    <a href="#" onclick="showPage('blog')" class="text-gray-400 hover:text-white">Blog Library</a>
+                    <a href="#" onclick="showPage('blog')" class="text-gray-400 hover:text-white">The Compliance Shield</a>
                     <a href="#" onclick="showPage('form')" class="text-gray-400 hover:text-white">Partner With Us</a>
                     <a href="Capability Statement.pdf" download class="text-gray-400 hover:text-white flex items-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -892,13 +908,6 @@
                 currentStep--;
                 renderFormStep();
             }
-        }
-
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            document.getElementById('form-container').classList.add('hidden');
-            document.getElementById('success-message').classList.remove('hidden');
-            return false;
         }
 
         function resetForm() {
