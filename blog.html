@@ -1,4 +1,15 @@
-tailwind.config = {
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Compliance Shield - Blog | Kurozato LLC</title>
+    <meta name="description" content="Insights on Federal Contracting, Compliance, and Administrative Excellence from Kurozato LLC">
+    <link rel="icon" type="image/png" href="logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
@@ -11,22 +22,125 @@ tailwind.config = {
                     }
                 }
             }
-        } /script> /head> body class="bg-white dark:bg-gray-900 transition-colors"> !-- Header --> header class="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-md z-50"> nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"> a href="index.html" class="flex items-center gap-3"> img src="logo.png" alt="Kurozato LLC" class="h-10 w-auto"> span class="text-xl font-bold text-oxford-blue dark:text-white">Kurozato LLC /span> /a> div class="flex items-center gap-6"> a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">Back to Home /a> button onclick="toggleDarkMode()" class="p-2 rounded-lg bg-neutral-gray dark:bg-gray-800 text-gray-700 dark:text-gray-300"> svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"> /path> /svg> svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"> /path> /svg> /button> /div> /nav> /header> !-- Main Content --> main id="main-content" class="pt-16"> !-- Blog List View --> div id="blog-list-view" class="min-h-screen py-20 px-4 bg-white dark:bg-gray-900"> div class="max-w-6xl mx-auto"> div class="text-center mb-12"> h1 class="text-5xl font-bold mb-4 text-oxford-blue dark:text-white">The Compliance Shield /h1> p class="text-xl text-gray-600 dark:text-gray-300">Insights on Federal Contracting, Compliance, and Administrative Excellence /p> /div> div id="articles-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"> !-- Articles will be inserted here by JavaScript --> /div> /div> /div> !-- Individual Blog Post View --> div id="blog-post-view" class="hidden min-h-screen py-20 px-4 bg-white dark:bg-gray-900"> div class="max-w-4xl mx-auto"> button onclick="showBlogList()" class="mb-8 flex items-center gap-2 text-executive-blue hover:text-oxford-blue dark:hover:text-blue-400 font-medium"> svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"> /path> /svg>
-                    Back to All Articles /button> div id="post-content"> !-- Post content will be inserted here by JavaScript --> /div> /div> /div> /main> !-- Footer --> footer class="bg-oxford-blue text-white py-12 px-4"> div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8"> div> div class="flex items-center gap-3 mb-4"> img src="logo.png" alt="Kurozato LLC" class="h-8 w-auto brightness-0 invert"> span class="text-lg font-bold">Kurozato LLC /span> /div> p class="text-gray-400">Federal Prime Integrator bridging commercial excellence and federal compliance. /p> div class="mt-4 flex flex-col gap-1 text-sm text-gray-400"> p class="flex items-center gap-2"> svg class="w-4 h-4 text-compliance-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"> /path> /svg>
-                        WOSB | HUBZone Certified /p> p>UEI: UWQLHZZJ1882 /p> p>CAGE: 9TFX1 /p> /div> /div> div> h4 class="font-semibold mb-4">Quick Links /h4> div class="flex flex-col gap-2"> a href="index.html" class="text-gray-400 hover:text-white">Home /a> a href="blog.html" class="text-gray-400 hover:text-white">The Compliance Shield /a> a href="index.html#form" class="text-gray-400 hover:text-white">Partner With Us /a> a href="Capability Statement.pdf" download class="text-gray-400 hover:text-white flex items-center gap-2"> svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"> /path> /svg>
-                        Download Capabilities Statement /a> /div> /div> div> h4 class="font-semibold mb-4">Contact /h4> div class="text-gray-400 flex flex-col gap-2"> p>P.O. Box 8264 /p> p>Stockton, CA 95208 /p> p class="mt-2">Phone: (209) 925-0733 /p> p>Email: kelley@kurozatollc.com /p> /div> /div> /div> div class="max-w-6xl mx-auto mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm"> p>&copy; 2026 Kurozato LLC. All rights reserved. /p> /div> /footer> script>
-        // Blog articles data - ADD YOUR ARTICLES HERE
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 transition-colors">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-md z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.png" alt="Kurozato LLC" class="h-10 w-auto">
+                <span class="text-xl font-bold text-oxford-blue dark:text-white">Kurozato LLC</span>
+            </a>
+            
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">Back to Home</a>
+                <button onclick="toggleDarkMode()" class="p-2 rounded-lg bg-neutral-gray dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+                    <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                    <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="pt-16">
+        <!-- Blog List View -->
+        <div id="blog-list-view" class="min-h-screen py-20 px-4 bg-white dark:bg-gray-900">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h1 class="text-5xl font-bold mb-4 text-oxford-blue dark:text-white">The Compliance Shield</h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-300">Insights on Federal Contracting, Compliance, and Administrative Excellence</p>
+                </div>
+
+                <div id="articles-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Articles will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Individual Blog Post View -->
+        <div id="blog-post-view" class="hidden min-h-screen py-20 px-4 bg-white dark:bg-gray-900">
+            <div class="max-w-4xl mx-auto">
+                <button onclick="showBlogList()" class="mb-8 flex items-center gap-2 text-executive-blue hover:text-oxford-blue dark:hover:text-blue-400 font-medium">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to All Articles
+                </button>
+                <div id="post-content">
+                    <!-- Post content will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-oxford-blue text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="logo.png" alt="Kurozato LLC" class="h-8 w-auto brightness-0 invert">
+                    <span class="text-lg font-bold">Kurozato LLC</span>
+                </div>
+                <p class="text-gray-400">Federal Prime Integrator bridging commercial excellence and federal compliance.</p>
+                <div class="mt-4 flex flex-col gap-1 text-sm text-gray-400">
+                    <p class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-compliance-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                        WOSB | HUBZone Certified
+                    </p>
+                    <p>UEI: UWQLHZZJ1882</p>
+                    <p>CAGE: 9TFX1</p>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4">Quick Links</h4>
+                <div class="flex flex-col gap-2">
+                    <a href="index.html" class="text-gray-400 hover:text-white">Home</a>
+                    <a href="blog.html" class="text-gray-400 hover:text-white">The Compliance Shield</a>
+                    <a href="index.html#form" class="text-gray-400 hover:text-white">Partner With Us</a>
+                    <a href="Capability Statement.pdf" download class="text-gray-400 hover:text-white flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        Download Capabilities Statement
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4">Contact</h4>
+                <div class="text-gray-400 flex flex-col gap-2">
+                    <p>P.O. Box 8264</p>
+                    <p>Stockton, CA 95208</p>
+                    <p class="mt-2">Phone: (209) 925-0733</p>
+                    <p>Email: kelley@kurozatollc.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+            <p>&copy; 2026 Kurozato LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== ADD YOUR BLOG ARTICLES HERE =====
         const blogArticles = [
-            // Example article structure:
-            // {
-            //     id: 1,
-            //     title: "Understanding FAR Compliance",
-            //     date: "2026-04-10",
-            //     author: "Kurozato Team",
-            //     excerpt: "A comprehensive guide to Federal Acquisition Regulation compliance for new contractors.",
-            //     image: "path/to/image.jpg",
-            //     content: `Full article content here...`
-            // }
+            {  
+              "id": "dc1db559-a12f-4d6a-baa0-9dc11036ba32",  
+              "title": "The Commercial Firm’s Guide to FAR Compliance: Focus on Delivery, Not Paperwork",  
+              "date": "2026-04-06",  
+              "author": "Kelley Crowell",  
+              "excerpt": "Discover how established commercial firms can navigate the complexities of FAR compliance and audit-ready documentation by partnering with a Federal Prime Integrator.",  
+              "content": "Full article content with embedded image markdown is saved in the draft. You build. You innovate. You perform. You deliver. The FAR is not delivery. The FAR is documentation. The FAR is administration...",  
+              "image": "https://cdn.marblism.com/Zz8npWhjoNV.webp"  
+            }
         ];
 
         // Dark mode
@@ -50,13 +164,40 @@ tailwind.config = {
             const grid = document.getElementById('articles-grid');
             
             if (blogArticles.length === 0) {
-                grid.innerHTML = ` div class="col-span-full text-center py-12"> svg class="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"> /path> /svg> h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2">No Articles Yet /h3> p class="text-gray-500 dark:text-gray-400">Check back soon for insights on federal contracting and compliance! /p> /div>
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12">
+                        <svg class="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2">No Articles Yet</h3>
+                        <p class="text-gray-500 dark:text-gray-400">Check back soon for insights on federal contracting and compliance!</p>
+                    </div>
                 `;
                 return;
             }
 
-            grid.innerHTML = blogArticles.map((article, index) => ` article class="bg-neutral-gray dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer" onclick="showBlogPost(${index})"> img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover"> div class="p-6"> div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-3"> svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"> /path> /svg> span>${article.date} /span> span>• /span> span>${article.author} /span> /div> h2 class="text-xl font-bold text-oxford-blue dark:text-white mb-3 hover:text-executive-blue transition-colors">${article.title} /h2> p class="text-gray-600 dark:text-gray-300 mb-4">${article.excerpt} /p> span class="text-executive-blue font-semibold flex items-center gap-2">
-                            Read More svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"> /path> /svg> /span> /div> /article>
+            grid.innerHTML = blogArticles.map((article, index) => `
+                <article class="bg-neutral-gray dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer" onclick="showBlogPost(${index})">
+                    <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-3">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>${article.date}</span>
+                            <span>•</span>
+                            <span>${article.author}</span>
+                        </div>
+                        <h2 class="text-xl font-bold text-oxford-blue dark:text-white mb-3 hover:text-executive-blue transition-colors">${article.title}</h2>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">${article.excerpt}</p>
+                        <span class="text-executive-blue font-semibold flex items-center gap-2">
+                            Read More
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </span>
+                    </div>
+                </article>
             `).join('');
         }
 
@@ -70,20 +211,41 @@ tailwind.config = {
                 .split('\n\n')
                 .map(para => {
                     if (para.startsWith('**') && para.endsWith('**')) {
-                        return ` h2 class="text-2xl font-bold mt-8 mb-4 text-oxford-blue dark:text-white">${para.slice(2, -2)} /h2>`;
+                        return `<h2 class="text-2xl font-bold mt-8 mb-4 text-oxford-blue dark:text-white">${para.slice(2, -2)}</h2>`;
                     }
                     if (para.startsWith('- ')) {
-                        const items = para.split('\n').map(item => ` li class="text-gray-700 dark:text-gray-300">${item.slice(2)} /li>`).join('');
-                        return ` ul class="list-disc pl-6 mb-4">${items} /ul>`;
+                        const items = para.split('\n').map(item => `<li class="text-gray-700 dark:text-gray-300">${item.slice(2)}</li>`).join('');
+                        return `<ul class="list-disc pl-6 mb-4">${items}</ul>`;
                     }
-                    return ` p class="mb-4 leading-relaxed text-gray-700 dark:text-gray-300">${para} /p>`;
+                    return `<p class="mb-4 leading-relaxed text-gray-700 dark:text-gray-300">${para}</p>`;
                 })
                 .join('');
 
-            content.innerHTML = ` img src="${article.image}" alt="${article.title}" class="w-full h-64 object-cover rounded-lg mb-8"> div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-4"> svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"> /path> /svg> span>${article.date} /span> span>• /span> span>By ${article.author} /span> /div> h1 class="text-4xl font-bold text-oxford-blue dark:text-white mb-6">${article.title} /h1> div class="blog-content">
-                    ${formattedContent} /div> div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700"> div class="bg-purple-50 dark:bg-gray-800 rounded-lg p-6"> h3 class="text-xl font-bold text-oxford-blue dark:text-white mb-3">Ready to Partner With Us? /h3> p class="text-gray-700 dark:text-gray-300 mb-4">
-                            Let Kurozato LLC handle the federal compliance while you focus on what you do best. /p> a href="index.html#form" class="inline-block bg-executive-blue hover:bg-[#004577] text-white px-6 py-3 rounded-lg font-semibold transition-colors">
-                            Get Started /a> /div> /div>
+            content.innerHTML = `
+                <img src="${article.image}" alt="${article.title}" class="w-full h-64 object-cover rounded-lg mb-8">
+                <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-4">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    <span>${article.date}</span>
+                    <span>•</span>
+                    <span>By ${article.author}</span>
+                </div>
+                <h1 class="text-4xl font-bold text-oxford-blue dark:text-white mb-6">${article.title}</h1>
+                <div class="blog-content">
+                    ${formattedContent}
+                </div>
+                <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+                    <div class="bg-purple-50 dark:bg-gray-800 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-oxford-blue dark:text-white mb-3">Ready to Partner With Us?</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            Let Kurozato LLC handle the federal compliance while you focus on what you do best.
+                        </p>
+                        <a href="index.html#form" class="inline-block bg-executive-blue hover:bg-[#004577] text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
             `;
 
             document.getElementById('blog-list-view').classList.add('hidden');
@@ -109,4 +271,7 @@ tailwind.config = {
             if (index !== -1) {
                 showBlogPost(index);
             }
-        } /script> /body> /html>
+        }
+    </script>
+</body>
+</html>
