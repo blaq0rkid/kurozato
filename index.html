@@ -478,20 +478,6 @@
                         <input type="hidden" name="form-name" value="subcontractor-intake">
                         <input type="hidden" name="bot-field">
                         
-                        <!-- All form fields rendered dynamically but submitted together -->
-                        <input type="hidden" name="companyName" id="hidden-companyName">
-                        <input type="hidden" name="contact" id="hidden-contact">
-                        <input type="hidden" name="email" id="hidden-email">
-                        <input type="hidden" name="phone" id="hidden-phone">
-                        <input type="hidden" name="revenue" id="hidden-revenue">
-                        <input type="hidden" name="naicsCodes" id="hidden-naicsCodes">
-                        <input type="hidden" name="samRegistered" id="hidden-samRegistered">
-                        <input type="hidden" name="uei" id="hidden-uei">
-                        <input type="hidden" name="experience" id="hidden-experience">
-                        <input type="hidden" name="hurdle" id="hidden-hurdle">
-                        <input type="hidden" name="capacity" id="hidden-capacity">
-                        <input type="hidden" name="timeline" id="hidden-timeline">
-                        
                         <div id="form-steps"></div>
 
                         <div class="flex justify-between mt-8">
@@ -950,16 +936,28 @@
                     // Save current step data
                     saveCurrentStep();
                     
-                    // Populate hidden fields with all collected data
+                    // Create FormData with all collected data
+                    const formDataToSubmit = new FormData();
+                    formDataToSubmit.append('form-name', 'subcontractor-intake');
+                    
+                    // Add all form data
                     Object.keys(formData).forEach(key => {
-                        const hiddenInput = document.getElementById(`hidden-${key}`);
-                        if (hiddenInput) {
-                            hiddenInput.value = formData[key] || '';
-                        }
+                        formDataToSubmit.append(key, formData[key] || '');
                     });
                     
-                    // Submit the form
-                    form.submit();
+                    // Submit via fetch
+                    fetch('/', {
+                        method: 'POST',
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                        body: new URLSearchParams(formDataToSubmit).toString()
+                    })
+                    .then(() => {
+                        window.location.href = '/thank-you.html';
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        alert('There was an error submitting the form. Please try again.');
+                    });
                 });
             }
         });
