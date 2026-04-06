@@ -1,0 +1,59 @@
+
+# Netlify Configuration File
+
+# Build settings
+[build]
+  # Since this is a static site with no build process, publish from current directory
+  publish = "."
+  
+  # No build command needed for static HTML
+  command = ""
+
+# Form settings - ensures Netlify processes form submissions
+[build.processing.html]
+  pretty_urls = true
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # Cache control for static assets
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    # Don't cache the main HTML file
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*.pdf"
+  [headers.values]
+    # Cache PDFs for 1 week
+    Cache-Control = "public, max-age=604800"
+
+# Redirects - ensures single-page-app routing works
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+
+# Form submission settings
+[forms]
+  # Email notification when form is submitted
+  # This can be configured in Netlify UI as well
+
+# Plugin configuration for enhanced form handling
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+
+# Environment (optional - good for consistency)
+[build.environment]
+  NODE_VERSION = "18"
