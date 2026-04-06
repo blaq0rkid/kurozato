@@ -1,0 +1,240 @@
+tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'oxford-blue': '#14213d',
+                        'federal-red': '#DC143C',
+                        'executive-blue': '#005696',
+                        'neutral-gray': '#F2F2F2',
+                        'compliance-gold': '#DAA520'
+                    }
+                }
+            }
+        } /script> style>
+        .slide-enter {
+            animation: slideIn 0.3s ease-out;
+        }
+        .slide-exit {
+            animation: slideOut 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+        .parallax-bg {
+            will-change: transform;
+        } /style> /head> body class="bg-white dark:bg-gray-900 transition-colors"> !-- Hidden Netlify Form for Detection --> form name="subcontractor-intake" netlify netlify-honeypot="bot-field" hidden action="/thank-you.html"> input type="hidden" name="form-name" value="subcontractor-intake"> input type="text" name="companyName" /> input type="text" name="contact" /> input type="email" name="email" /> input type="tel" name="phone" /> select name="revenue"> option>Yes /option> /select> input type="text" name="naicsCodes" /> select name="samRegistered"> option>Yes /option> /select> input type="text" name="uei" /> select name="experience"> option>None /option> /select> select name="hurdle"> option>FAR/DFARS /option> /select> input type="text" name="capacity" /> select name="timeline"> option>Immediately /option> /select> /form> !-- Header --> header id="header" class="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-md z-50"> nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"> div class="flex items-center gap-3"> img src="logo.png" alt="Kurozato LLC" class="h-10 w-auto"> span class="text-xl font-bold text-oxford-blue dark:text-white">Kurozato LLC /span> /div> div id="desktop-menu" class="hidden md:flex items-center gap-6"> a href="#" onclick="showPage('home')" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">Home /a> a href="blog.html" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">The Compliance Shield /a> a href="#" onclick="showPage('form')" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">Partner With Us /a> a href="#" onclick="showPage('privacy')" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">Privacy /a> a href="#" onclick="showPage('terms')" class="text-gray-700 dark:text-gray-300 hover:text-executive-blue font-medium">Terms /a> button onclick="toggleDarkMode()" class="p-2 rounded-lg bg-neutral-gray dark:bg-gray-800 text-gray-700 dark:text-gray-300"> svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"> /path> /svg> svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"> /path> /svg> /button> /div> button onclick="toggleMobileMenu()" class="md:hidden p-2 text-gray-700 dark:text-gray-300"> svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"> /path> /svg> svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"> /path> /svg> /button> /nav> !-- Mobile Menu --> div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700"> div class="flex flex-col gap-2 p-4"> a href="#" onclick="showPage('home'); toggleMobileMenu();" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-neutral-gray dark:hover:bg-gray-700 rounded">Home /a> a href="blog.html" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-neutral-gray dark:hover:bg-gray-700 rounded">The Compliance Shield /a> a href="#" onclick="showPage('form'); toggleMobileMenu();" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-neutral-gray dark:hover:bg-gray-700 rounded">Partner With Us /a> a href="#" onclick="showPage('privacy'); toggleMobileMenu();" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-neutral-gray dark:hover:bg-gray-700 rounded">Privacy Policy /a> a href="#" onclick="showPage('terms'); toggleMobileMenu();" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-neutral-gray dark:hover:bg-gray-700 rounded">Terms of Service /a> button onclick="toggleDarkMode()" class="flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-neutral-gray dark:hover:bg-gray-700 rounded"> span id="dark-mode-text">Dark Mode /span> /button> /div> /div> /header> !-- Main Content --> main id="main-content" class="pt-16"> !-- Home Page --> div id="home-page"> !-- Hero Section --> div class="relative h-screen overflow-hidden bg-gradient-to-br from-oxford-blue via-[#1a2845] to-[#0d1929]"> div id="parallax-bg" class="parallax-bg absolute inset-0 opacity-10" style="background-image: url('/api/placeholder/1920/1080'); background-size: cover; background-position: center;"> /div> div class="relative h-full flex items-center justify-center px-4"> div class="max-w-4xl text-center text-white flex flex-col gap-6"> h1 class="text-5xl md:text-7xl font-bold mb-4">Federal Prime Integrator /h1> p class="text-xl md:text-2xl mb-8 text-blue-100">We bridge the gap between commercial excellence and federal compliance /p> div class="flex flex-col sm:flex-row gap-4 justify-center"> button onclick="showPage('form')" class="px-8 py-4 bg-federal-red text-white rounded-lg font-semibold hover:bg-[#B8112E] transition-colors flex items-center justify-center gap-2">
+                                Partner With Us svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"> /path> /svg> /button> a href="Capability Statement.pdf" download class="px-8 py-4 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-oxford-blue transition-colors flex items-center justify-center gap-2"> svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"> /path> /svg>
+                                Download Capabilities Statement /a> /div> /div> /div> /div> !-- Integrator Advantage --> div class="py-20 px-4 bg-white dark:bg-gray-900"> div class="max-w-6xl mx-auto"> h2 class="text-4xl font-bold text-center mb-12 text-oxford-blue dark:text-white">The Integrator Advantage /h2> div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8"> div class="flex flex-col gap-4 p-6 rounded-lg bg-neutral-gray dark:bg-gray-800 hover:shadow-lg transition-shadow"> svg class="w-6 h-6 text-executive-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"> /path> /svg> h3 class="text-xl font-semibold text-oxford-blue dark:text-white">FAR/DFARS Compliance /h3> p class="text-gray-600 dark:text-gray-300">We manage all regulatory requirements /p> /div> div class="flex flex-col gap-4 p-6 rounded-lg bg-neutral-gray dark:bg-gray-800 hover:shadow-lg transition-shadow"> svg class="w-6 h-6 text-executive-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"> /path> /svg> h3 class="text-xl font-semibold text-oxford-blue dark:text-white">Audit-Ready Documentation /h3> p class="text-gray-600 dark:text-gray-300">Comprehensive record-keeping for government reviews /p> /div> div class="flex flex-col gap-4 p-6 rounded-lg bg-neutral-gray dark:bg-gray-800 hover:shadow-lg transition-shadow"> svg class="w-6 h-6 text-executive-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"> /path> /svg> h3 class="text-xl font-semibold text-oxford-blue dark:text-white">Dedicated Integration Lead /h3> p class="text-gray-600 dark:text-gray-300">Your direct line to federal contracting success /p> /div> div class="flex flex-col gap-4 p-6 rounded-lg bg-neutral-gray dark:bg-gray-800 hover:shadow-lg transition-shadow"> svg class="w-6 h-6 text-executive-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"> /path> /svg> h3 class="text-xl font-semibold text-oxford-blue dark:text-white">No Prior Experience Required /h3> p class="text-gray-600 dark:text-gray-300">We provide the expertise you lack /p> /div> /div> /div> /div> !-- Comparison Table --> div class="py-20 px-4 bg-neutral-gray dark:bg-gray-800"> div class="max-w-6xl mx-auto"> h2 class="text-4xl font-bold text-center mb-12 text-oxford-blue dark:text-white">Traditional vs. Kurozato Integration /h2> div class="bg-white dark:bg-gray-900 rounded-lg shadow-xl overflow-x-auto"> table class="w-full"> thead class="bg-oxford-blue text-white"> tr> th class="px-6 py-4 text-left">Challenge /th> th class="px-6 py-4 text-left">Traditional Approach /th> th class="px-6 py-4 text-left">Kurozato Solution /th> /tr> /thead> tbody class="divide-y divide-gray-200 dark:divide-gray-700"> tr> td class="px-6 py-4 font-semibold text-oxford-blue dark:text-white">FAR Compliance /td> td class="px-6 py-4 text-gray-600 dark:text-gray-300">Hire expensive consultants /td> td class="px-6 py-4 text-executive-blue font-semibold">We manage it completely /td> /tr> tr> td class="px-6 py-4 font-semibold text-oxford-blue dark:text-white">DCAA Accounting /td> td class="px-6 py-4 text-gray-600 dark:text-gray-300">Build internal capability /td> td class="px-6 py-4 text-executive-blue font-semibold">Audit-ready from day one /td> /tr> tr> td class="px-6 py-4 font-semibold text-oxford-blue dark:text-white">Contract Admin /td> td class="px-6 py-4 text-gray-600 dark:text-gray-300">Distracts from core business /td> td class="px-6 py-4 text-executive-blue font-semibold">Dedicated integrator lead /td> /tr> tr> td class="px-6 py-4 font-semibold text-oxford-blue dark:text-white">Risk /td> td class="px-6 py-4 text-gray-600 dark:text-gray-300">All on your shoulders /td> td class="px-6 py-4 text-executive-blue font-semibold">We assume prime responsibility /td> /tr> /tbody> /table> /div> /div> /div> !-- Industries & NAICS --> div class="py-20 px-4 bg-white dark:bg-gray-900"> div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8"> div class="md:col-span-2 flex flex-col gap-6"> h2 class="text-4xl font-bold text-oxford-blue dark:text-white">Industries We Serve /h2> p class="text-lg text-gray-600 dark:text-gray-300">Kurozato LLC partners with established commercial firms across professional, technical, and administrative services. Our integration model works best for companies with proven commercial track records seeking federal market access. /p> div class="flex flex-col gap-4"> div class="flex items-start gap-3"> svg class="w-6 h-6 text-executive-blue flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"> /path> /svg> div> h4 class="font-semibold text-oxford-blue dark:text-white">Professional Services /h4> p class="text-gray-600 dark:text-gray-300">Consulting, engineering, and technical expertise /p> /div> /div> div class="flex items-start gap-3"> svg class="w-6 h-6 text-executive-blue flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"> /path> /svg> div> h4 class="font-semibold text-oxford-blue dark:text-white">IT & Cybersecurity /h4> p class="text-gray-600 dark:text-gray-300">Software development, cloud services, security operations /p> /div> /div> div class="flex items-start gap-3"> svg class="w-6 h-6 text-executive-blue flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"> /path> /svg> div> h4 class="font-semibold text-oxford-blue dark:text-white">Administrative Support /h4> p class="text-gray-600 dark:text-gray-300">Program management, training, business operations /p> /div> /div> /div> /div> div class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg h-fit border-l-4 border-compliance-gold"> h3 class="text-xl font-bold mb-4 text-oxford-blue dark:text-white flex items-center gap-2"> svg class="w-5 h-5 text-compliance-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"> /path> /svg>
+                            Common NAICS Codes /h3> ul class="flex flex-col gap-2 text-sm text-gray-700 dark:text-gray-300"> li>• 541511 - Custom Computer Programming /li> li>• 541512 - Computer Systems Design /li> li>• 541519 - Other Computer Related /li> li>• 541611 - Administrative Management /li> li>• 541618 - Other Management Consulting /li> li>• 541715 - R&D in Physical Sciences /li> li>• 561110 - Office Administrative Services /li> /ul> /div> /div> /div> !-- Latest Blog Preview --> div class="py-20 px-4 bg-neutral-gray dark:bg-gray-800"> div class="max-w-6xl mx-auto"> div class="flex justify-between items-center mb-12"> h2 class="text-4xl font-bold text-oxford-blue dark:text-white">The Compliance Shield /h2> a href="blog.html" class="text-executive-blue hover:text-oxford-blue dark:hover:text-blue-400 font-semibold flex items-center gap-2">
+                            View All Articles svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"> /path> /svg> /a> /div> div class="text-center py-12"> svg class="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"> /path> /svg> h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2">No Articles Yet /h3> p class="text-gray-500 dark:text-gray-400">Check back soon for insights on federal contracting and compliance! /p> /div> /div> /div> !-- FAQ Section --> div class="py-20 px-4 bg-white dark:bg-gray-900"> div class="max-w-4xl mx-auto"> h2 class="text-4xl font-bold text-center mb-12 text-oxford-blue dark:text-white">Frequently Asked Questions /h2> div class="flex flex-col gap-4"> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">What is a Federal Prime Integrator? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">We act as the lead contractor, managing all administrative and compliance burdens so you can focus on technical delivery. /p> /details> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">How does Kurozato LLC differ from a consultant? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">We don't just give advice; we take the lead on the contract and handle the actual reporting, FAR management, and audit-ready documentation. /p> /details> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">Why do I need $1M+ in revenue to partner? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">This ensures you have the operational capacity to perform on federal contracts while we handle the integration. /p> /details> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">Do I need prior government experience? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">No. We provide the expertise you lack to bridge the gap into the federal market. /p> /details> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">What is FAR compliance? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">The Federal Acquisition Regulation is the complex set of rules governing government purchases. We manage this entirely for you. /p> /details> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">Will I lose control over my technical delivery? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">Not at all. You focus on the work; we focus on the bureaucracy and administrative excellence. /p> /details> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">What exactly is "audit-ready documentation"? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">It's the standard of record-keeping required to pass government reviews. We build and maintain this for every contract. /p> /details> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">Can you help if I don't have a CAGE or UEI? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">Yes, we can guide you through the initial registration as part of our onboarding. /p> /details> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">What industries do you serve? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">We work with established commercial firms across all professional, technical, and administrative services. /p> /details> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">How do you handle DCAA requirements? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">We ensure all accounting and reporting meet Defense Contract Audit Agency standards. /p> /details> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">What is the fee structure? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">We operate on a prime integrator model, typically structured as a percentage of the contract value or a fixed management fee depending on the scope. /p> /details> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">How do we communicate on a day-to-day basis? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">You have a dedicated integrator lead who handles all government-facing communication and compliance reporting. /p> /details> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">Can you help with security clearances? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">We can assist in navigating the process for facility and personnel clearances as required by specific contracts. /p> /details> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">How long is the onboarding process? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">Typically 2-4 weeks to align systems and identify target opportunities. /p> /details> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">Do you assist with proposal development? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">Yes, we lead the administrative and compliance portions of the proposal while you provide the technical input. /p> /details> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">What happens if our contract is audited? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">Kurozato manages the audit process directly, providing all necessary documentation and responding to government inquiries. /p> /details> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">Do you provide the workforce? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">You provide the technical experts and delivery team; we provide the federal administrative infrastructure. /p> /details> details class="bg-neutral-gray dark:bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-executive-blue"> summary class="font-semibold text-oxford-blue dark:text-white cursor-pointer hover:text-executive-blue transition-colors">How do I know if my firm is a good fit? /summary> p class="mt-4 text-gray-600 dark:text-gray-300">If you have a proven commercial track record but find federal regulations overwhelming, we are your ideal partner. /p> /details> /div> /div> /div> !-- CTA Section --> div class="py-20 px-4 bg-oxford-blue text-white"> div class="max-w-4xl mx-auto text-center flex flex-col gap-6"> h2 class="text-4xl font-bold">Ready to Enter the Federal Market? /h2> p class="text-xl text-blue-100">Let Kurozato LLC handle the bureaucracy while you focus on what you do best. /p> button onclick="showPage('form')" class="mx-auto px-8 py-4 bg-federal-red text-white rounded-lg font-semibold hover:bg-[#B8112E] transition-colors flex items-center gap-2">
+                        Start Your Partnership svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"> /path> /svg> /button> /div> /div> /div> !-- Form Page --> div id="form-page" class="hidden min-h-screen py-20 px-4 bg-neutral-gray dark:bg-gray-900"> div class="max-w-2xl mx-auto"> div class="text-center mb-8"> h1 class="text-4xl font-bold mb-4 text-oxford-blue dark:text-white">Subcontractor Intake Form /h1> p class="text-gray-600 dark:text-gray-300">Help us understand your capabilities and readiness for federal contracting /p> /div> div id="form-container" class="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8"> div class="mb-8"> div class="flex justify-between items-center mb-2"> span id="progress-text" class="text-sm font-medium text-gray-600 dark:text-gray-400">Question 1 of 9 /span> span id="progress-percent" class="text-sm font-medium text-executive-blue">11% /span> /div> div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"> div id="progress-bar" class="bg-executive-blue h-2 rounded-full transition-all duration-300" style="width: 11%"> /div> /div> /div> form id="netlify-form" name="subcontractor-intake" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field"> input type="hidden" name="form-name" value="subcontractor-intake"> input type="hidden" name="bot-field"> div id="form-steps"> /div> div class="flex justify-between mt-8"> button type="button" id="prev-btn" onclick="prevStep()" class="px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"> svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"> /path> /svg>
+                                Previous /button> button type="button" id="next-btn" onclick="nextStep()" class="px-6 py-3 bg-executive-blue text-white rounded-lg font-semibold hover:bg-[#004577] flex items-center gap-2">
+                                Next svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"> /path> /svg> /button> button type="submit" id="submit-btn" class="hidden px-6 py-3 bg-federal-red text-white rounded-lg font-semibold hover:bg-[#B8112E] flex items-center gap-2">
+                                Submit svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"> /path> /svg> /button> /div> /form> div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700"> p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">By submitting this form, you acknowledge that this inquiry does not create a binding Teaming Agreement or Subcontractor relationship with Kurozato LLC. All data provided is subject to our Privacy Policy and will be used for vetting and professional communication purposes only. Kurozato LLC reserves the right to verify all financial and performance claims through third-party databases, including SAM.gov. /p> /div> /div> /div> /div> !-- Privacy Page --> div id="privacy-page" class="hidden min-h-screen py-20 px-4 bg-white dark:bg-gray-900"> div class="max-w-4xl mx-auto"> h1 class="text-4xl font-bold mb-6 text-oxford-blue dark:text-white">Privacy Policy /h1> p class="text-sm text-gray-500 dark:text-gray-400 mb-8">Effective Date: April 6, 2026 /p> div class="prose dark:prose-invert max-w-none flex flex-col gap-6 text-gray-700 dark:text-gray-300"> p>Kurozato LLC ("Company," "we," "us," or "our") is committed to protecting the privacy and security of the information provided to us by our clients, partners, and website visitors. /p> h2 class="text-2xl font-bold mt-8 mb-4 text-oxford-blue dark:text-white">1. Information We Collect /h2> p>We may collect several types of information from and about users of our website and services, including: /p> ul class="list-disc pl-6 flex flex-col gap-2"> li> strong>Personal Identification Information: /strong> Name, email address, telephone number, job title, and professional contact details /li> li> strong>Business and Vendor Qualification Information: /strong> Company name, address, NAICS codes, UEI, CAGE/NCAGE codes, SAM registration details /li> li> strong>Financial and Commercial Information: /strong> Business revenue, financial capability indicators, banking/payment details /li> li> strong>Compliance and Due Diligence Information: /strong> Debarment/suspension status, audit-ready documentation /li> li> strong>Technical Data: /strong> IP address, browser type, operating system, usage patterns collected through cookies /li> /ul> h2 class="text-2xl font-bold mt-8 mb-4 text-oxford-blue dark:text-white">2. How We Use Your Information /h2> ul class="list-disc pl-6 flex flex-col gap-2"> li> strong>Service Delivery: /strong> Facilitate federal contract participation and manage FAR compliance /li> li> strong>Vetting and Qualification: /strong> Evaluate capacity, eligibility, and compliance posture /li> li> strong>Communication: /strong> Provide updates on contract opportunities and regulatory changes /li> li> strong>Compliance and Legal Obligations: /strong> Maintain audit-ready documentation and fulfill reporting requirements /li> /ul> h2 class="text-2xl font-bold mt-8 mb-4 text-oxford-blue dark:text-white">3. Disclosure of Your Information /h2> p>We do not sell or rent your information to third parties. We may disclose your information to: /p> ul class="list-disc pl-6 flex flex-col gap-2"> li>Federal government agencies for contract performance and compliance /li> li>Service providers (including Netlify) who help us operate our website /li> li>Legal authorities when required by law /li> /ul> h2 class="text-2xl font-bold mt-8 mb-4 text-oxford-blue dark:text-white">9. Contact Information /h2> p> strong>Kurozato LLC /strong> br>P.O. Box 8264 br>Stockton, CA 95208 br>Email: compliance@kurozatollc.com /p> /div> /div> /div> !-- Terms Page --> div id="terms-page" class="hidden min-h-screen py-20 px-4 bg-white dark:bg-gray-900"> div class="max-w-4xl mx-auto"> h1 class="text-4xl font-bold mb-6 text-oxford-blue dark:text-white">Terms of Service /h1> p class="text-sm text-gray-500 dark:text-gray-400 mb-8">Effective Date: April 6, 2026 /p> div class="prose dark:prose-invert max-w-none flex flex-col gap-6 text-gray-700 dark:text-gray-300"> p>Welcome to Kurozato LLC. These Terms of Service govern your access to and use of our website and services as a Federal Prime Integrator. /p> h2 class="text-2xl font-bold mt-8 mb-4 text-oxford-blue dark:text-white">1. Description of Services /h2> p>Kurozato LLC provides business services as a Federal Prime Integrator, bridging the gap between innovative commercial vendors and the United States Federal Government. /p> h2 class="text-2xl font-bold mt-8 mb-4 text-oxford-blue dark:text-white">2. Eligibility and Partner Qualifications /h2> p>Our services are intended for established commercial firms, typically those with $1,000,000 or more in annual revenue. /p> ul class="list-disc pl-6 flex flex-col gap-2"> li>You have legal authority to bind your organization /li> li>Your organization is a valid legal entity in good standing /li> li>Your organization is not currently debarred or suspended by any Federal agency /li> /ul> h2 class="text-2xl font-bold mt-8 mb-4 text-oxford-blue dark:text-white">11. Contact Information /h2> p> strong>Kurozato LLC /strong> br>P.O. Box 8264 br>Stockton, CA 95208 br>Email: compliance@kurozatollc.com /p> /div> /div> /div> /main> !-- Footer --> footer class="bg-oxford-blue text-white py-12 px-4"> div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8"> div> div class="flex items-center gap-3 mb-4"> img src="logo.png" alt="Kurozato LLC" class="h-8 w-auto brightness-0 invert"> span class="text-lg font-bold">Kurozato LLC /span> /div> p class="text-gray-400">Federal Prime Integrator bridging commercial excellence and federal compliance. /p> div class="mt-4 flex flex-col gap-1 text-sm text-gray-400"> p class="flex items-center gap-2"> svg class="w-4 h-4 text-compliance-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"> /path> /svg>
+                        WOSB | HUBZone Certified /p> p>UEI: UWQLHZZJ1882 /p> p>CAGE: 9TFX1 /p> /div> /div> div> h4 class="font-semibold mb-4">Quick Links /h4> div class="flex flex-col gap-2"> a href="#" onclick="showPage('home')" class="text-gray-400 hover:text-white">Home /a> a href="blog.html" class="text-gray-400 hover:text-white">The Compliance Shield /a> a href="#" onclick="showPage('form')" class="text-gray-400 hover:text-white">Partner With Us /a> a href="Capability Statement.pdf" download class="text-gray-400 hover:text-white flex items-center gap-2"> svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"> path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"> /path> /svg>
+                        Download Capabilities Statement /a> a href="#" onclick="showPage('privacy')" class="text-gray-400 hover:text-white">Privacy Policy /a> a href="#" onclick="showPage('terms')" class="text-gray-400 hover:text-white">Terms of Service /a> a href="#" class="text-gray-400 hover:text-white">Accessibility Statement /a> /div> /div> div> h4 class="font-semibold mb-4">Contact /h4> div class="text-gray-400 flex flex-col gap-2"> p>P.O. Box 8264 /p> p>Stockton, CA 95208 /p> p class="mt-2">Phone: (209) 925-0733 /p> p>Email: kelley@kurozatollc.com /p> p class="text-sm mt-2">Also: info@, contracts@, compliance@, partners@, security@, proposals@kurozatollc.com /p> /div> /div> /div> div class="max-w-6xl mx-auto mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm"> p>&copy; 2026 Kurozato LLC. All rights reserved. /p> /div> /footer> script>
+        // Form questions
+        const formQuestions = [
+            { id: 'companyName', label: 'Company Name', type: 'text', required: true },
+            { id: 'contact', label: 'Primary Point of Contact (Name)', type: 'text', required: true, additional: [
+                { id: 'email', label: 'Email', type: 'email' },
+                { id: 'phone', label: 'Phone', type: 'tel' }
+            ]},
+            { id: 'revenue', label: 'Is your current annual revenue above $1M?', type: 'select', required: true, options: ['Yes', 'No'] },
+            { id: 'naicsCodes', label: 'Primary Industry or NAICS codes', type: 'text', placeholder: 'e.g., 541511, 541512', required: true },
+            { id: 'samRegistered', label: 'Do you have an active UEI and CAGE Code?', type: 'select', required: true, options: ['Yes', 'No', 'In-Progress'], additional: [
+                { id: 'uei', label: 'UEI (if available)', type: 'text' }
+            ]},
+            { id: 'experience', label: 'What is your current government contracting experience?', type: 'select', required: true, options: ['None', 'Subcontractor', 'Prime'] },
+            { id: 'hurdle', label: 'What is your biggest administrative or compliance hurdle right now?', type: 'select', required: true, options: ['FAR/DFARS', 'DCAA Accounting', 'Reporting', 'Audit Readiness', 'Other'] },
+            { id: 'capacity', label: 'What is your estimated performance capacity (Contract Value)?', type: 'text', placeholder: 'e.g., $500K - $5M', required: true },
+            { id: 'timeline', label: 'How soon are you looking to perform on federal contracts?', type: 'select', required: true, options: ['Immediately', 'Within 3 months', 'Within 6 months', '6+ months'] }
+        ];
+
+        let currentStep = 0;
+        const formData = {};
+
+        // Dark mode
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('darkMode', isDark);
+            document.getElementById('moon-icon').classList.toggle('hidden', isDark);
+            document.getElementById('sun-icon').classList.toggle('hidden', !isDark);
+            document.getElementById('dark-mode-text').textContent = isDark ? 'Light Mode' : 'Dark Mode';
+        }
+
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            toggleDarkMode();
+        }
+
+        // Mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+            menu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        }
+
+        // Page navigation
+        function showPage(page) {
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('form-page').classList.add('hidden');
+            document.getElementById('privacy-page').classList.add('hidden');
+            document.getElementById('terms-page').classList.add('hidden');
+            document.getElementById(`${page}-page`).classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const parallaxBg = document.getElementById('parallax-bg');
+            if (parallaxBg) {
+                parallaxBg.style.transform = `translateY(${scrollY * 0.5}px)`;
+            }
+        });
+
+        // Form handling
+        function saveCurrentStep() {
+            const question = formQuestions[currentStep];
+            const container = document.getElementById('form-steps');
+            
+            const mainInput = container.querySelector(`[name="${question.id}"]`);
+            if (mainInput) {
+                formData[question.id] = mainInput.value;
+            }
+            
+            if (question.additional) {
+                question.additional.forEach(field => {
+                    const input = container.querySelector(`[name="${field.id}"]`);
+                    if (input) {
+                        formData[field.id] = input.value;
+                    }
+                });
+            }
+        }
+
+        function renderFormStep() {
+            const question = formQuestions[currentStep];
+            const container = document.getElementById('form-steps');
+            
+            let html = ` div class="slide-enter flex flex-col gap-6"> div class="flex flex-col gap-2"> label class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                        ${question.label}
+                        ${question.required ? ' span class="text-red-600 ml-1">* /span>' : ''} /label>`;
+            
+            if (question.type === 'select') {
+                html += ` select name="${question.id}" class="px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:border-executive-blue focus:outline-none" ${question.required ? 'required' : ''}> option value="">Select an option /option>`;
+                question.options.forEach(opt => {
+                    const selected = formData[question.id] === opt ? 'selected' : '';
+                    html += ` option value="${opt}" ${selected}>${opt} /option>`;
+                });
+                html += ` /select>`;
+            } else {
+                const value = formData[question.id] || '';
+                html += ` input type="${question.type}" name="${question.id}" value="${value}" placeholder="${question.placeholder || ''}" class="px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:border-executive-blue focus:outline-none" ${question.required ? 'required' : ''}>`;
+            }
+            
+            html += ` /div>`;
+            
+            if (question.additional) {
+                question.additional.forEach(field => {
+                    const value = formData[field.id] || '';
+                    html += ` div class="flex flex-col gap-2"> label class="text-sm font-medium text-gray-700 dark:text-gray-300">${field.label} /label> input type="${field.type}" name="${field.id}" value="${value}" class="px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:border-executive-blue focus:outline-none"> /div>`;
+                });
+            }
+            
+            html += ` /div>`;
+            container.innerHTML = html;
+            
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const percent = Math.round(((currentStep + 1) / formQuestions.length) * 100);
+            document.getElementById('progress-text').textContent = `Question ${currentStep + 1} of ${formQuestions.length}`;
+            document.getElementById('progress-percent').textContent = `${percent}%`;
+            document.getElementById('progress-bar').style.width = `${percent}%`;
+            
+            document.getElementById('prev-btn').disabled = currentStep === 0;
+            
+            if (currentStep === formQuestions.length - 1) {
+                document.getElementById('next-btn').classList.add('hidden');
+                document.getElementById('submit-btn').classList.remove('hidden');
+            } else {
+                document.getElementById('next-btn').classList.remove('hidden');
+                document.getElementById('submit-btn').classList.add('hidden');
+            }
+        }
+
+        function nextStep() {
+            saveCurrentStep();
+            if (currentStep formQuestions.length - 1) {
+                currentStep++;
+                renderFormStep();
+            }
+        }
+
+        function prevStep() {
+            saveCurrentStep();
+            if (currentStep > 0) {
+                currentStep--;
+                renderFormStep();
+            }
+        }
+
+        // Handle form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('netlify-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    saveCurrentStep();
+                    
+                    const formDataToSubmit = new FormData();
+                    formDataToSubmit.append('form-name', 'subcontractor-intake');
+                    
+                    Object.keys(formData).forEach(key => {
+                        formDataToSubmit.append(key, formData[key] || '');
+                    });
+                    
+                    fetch('/', {
+                        method: 'POST',
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                        body: new URLSearchParams(formDataToSubmit).toString()
+                    })
+                    .then(() => {
+                        window.location.href = '/thank-you.html';
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        alert('There was an error submitting the form. Please try again.');
+                    });
+                });
+            }
+        });
+
+        // Initialize
+        renderFormStep(); /script> /body> /html>
