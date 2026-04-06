@@ -86,7 +86,7 @@
 </head>
 <body class="bg-white dark:bg-gray-900 transition-colors">
     <!-- Hidden Netlify Form for Detection -->
-    <form name="subcontractor-intake" netlify netlify-honeypot="bot-field" hidden>
+    <form name="subcontractor-intake" netlify netlify-honeypot="bot-field" hidden action="/thank-you.html">
         <input type="text" name="companyName" />
         <input type="text" name="contact" />
         <input type="email" name="email" />
@@ -474,9 +474,23 @@
                         </div>
                     </div>
 
-                    <form name="subcontractor-intake" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <form id="netlify-form" name="subcontractor-intake" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
                         <input type="hidden" name="form-name" value="subcontractor-intake">
                         <input type="hidden" name="bot-field">
+                        
+                        <!-- All form fields rendered dynamically but submitted together -->
+                        <input type="hidden" name="companyName" id="hidden-companyName">
+                        <input type="hidden" name="contact" id="hidden-contact">
+                        <input type="hidden" name="email" id="hidden-email">
+                        <input type="hidden" name="phone" id="hidden-phone">
+                        <input type="hidden" name="revenue" id="hidden-revenue">
+                        <input type="hidden" name="naicsCodes" id="hidden-naicsCodes">
+                        <input type="hidden" name="samRegistered" id="hidden-samRegistered">
+                        <input type="hidden" name="uei" id="hidden-uei">
+                        <input type="hidden" name="experience" id="hidden-experience">
+                        <input type="hidden" name="hurdle" id="hidden-hurdle">
+                        <input type="hidden" name="capacity" id="hidden-capacity">
+                        <input type="hidden" name="timeline" id="hidden-timeline">
                         
                         <div id="form-steps"></div>
 
@@ -507,17 +521,6 @@
                     <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
                         <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">By submitting this form, you acknowledge that this inquiry does not create a binding Teaming Agreement or Subcontractor relationship with Kurozato LLC. All data provided is subject to our Privacy Policy and will be used for vetting and professional communication purposes only. Kurozato LLC reserves the right to verify all financial and performance claims through third-party databases, including SAM.gov.</p>
                     </div>
-                </div>
-
-                <div id="success-message" class="hidden bg-white dark:bg-gray-800 rounded-lg shadow-xl p-12 text-center flex flex-col gap-6">
-                    <div class="mx-auto w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
-                        <svg class="w-10 h-10 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h2 class="text-3xl font-bold text-oxford-blue dark:text-white">Thank You!</h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-300">An Integrator Lead will review your capacity and reach out within 24 hours.</p>
-                    <button onclick="resetForm()" class="mx-auto px-6 py-3 bg-executive-blue text-white rounded-lg font-semibold hover:bg-[#004577]">Return to Home</button>
                 </div>
             </div>
         </div>
@@ -666,6 +669,7 @@
         ];
 
         let currentStep = 0;
+        const formData = {};
 
         // Dark mode
         function toggleDarkMode() {
@@ -840,6 +844,27 @@
         });
 
         // Form handling
+        function saveCurrentStep() {
+            const question = formQuestions[currentStep];
+            const container = document.getElementById('form-steps');
+            
+            // Save main field
+            const mainInput = container.querySelector(`[name="${question.id}"]`);
+            if (mainInput) {
+                formData[question.id] = mainInput.value;
+            }
+            
+            // Save additional fields
+            if (question.additional) {
+                question.additional.forEach(field => {
+                    const input = container.querySelector(`[name="${field.id}"]`);
+                    if (input) {
+                        formData[field.id] = input.value;
+                    }
+                });
+            }
+        }
+
         function renderFormStep() {
             const question = formQuestions[currentStep];
             const container = document.getElementById('form-steps');
@@ -855,20 +880,23 @@
                 html += `<select name="${question.id}" class="px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:border-executive-blue focus:outline-none" ${question.required ? 'required' : ''}>
                     <option value="">Select an option</option>`;
                 question.options.forEach(opt => {
-                    html += `<option value="${opt}">${opt}</option>`;
+                    const selected = formData[question.id] === opt ? 'selected' : '';
+                    html += `<option value="${opt}" ${selected}>${opt}</option>`;
                 });
                 html += `</select>`;
             } else {
-                html += `<input type="${question.type}" name="${question.id}" placeholder="${question.placeholder || ''}" class="px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:border-executive-blue focus:outline-none" ${question.required ? 'required' : ''}>`;
+                const value = formData[question.id] || '';
+                html += `<input type="${question.type}" name="${question.id}" value="${value}" placeholder="${question.placeholder || ''}" class="px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:border-executive-blue focus:outline-none" ${question.required ? 'required' : ''}>`;
             }
             
             html += `</div>`;
             
             if (question.additional) {
                 question.additional.forEach(field => {
+                    const value = formData[field.id] || '';
                     html += `<div class="flex flex-col gap-2">
                         <label class="text-sm font-medium text-gray-700 dark:text-gray-300">${field.label}</label>
-                        <input type="${field.type}" name="${field.id}" class="px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:border-executive-blue focus:outline-none">
+                        <input type="${field.type}" name="${field.id}" value="${value}" class="px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:border-executive-blue focus:outline-none">
                     </div>`;
                 });
             }
@@ -897,6 +925,7 @@
         }
 
         function nextStep() {
+            saveCurrentStep();
             if (currentStep < formQuestions.length - 1) {
                 currentStep++;
                 renderFormStep();
@@ -904,19 +933,36 @@
         }
 
         function prevStep() {
+            saveCurrentStep();
             if (currentStep > 0) {
                 currentStep--;
                 renderFormStep();
             }
         }
 
-        function resetForm() {
-            currentStep = 0;
-            document.getElementById('form-container').classList.remove('hidden');
-            document.getElementById('success-message').classList.add('hidden');
-            renderFormStep();
-            showPage('home');
-        }
+        // Handle form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('netlify-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Save current step data
+                    saveCurrentStep();
+                    
+                    // Populate hidden fields with all collected data
+                    Object.keys(formData).forEach(key => {
+                        const hiddenInput = document.getElementById(`hidden-${key}`);
+                        if (hiddenInput) {
+                            hiddenInput.value = formData[key] || '';
+                        }
+                    });
+                    
+                    // Submit the form
+                    form.submit();
+                });
+            }
+        });
 
         // Initialize
         renderFormStep();
